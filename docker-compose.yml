@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  vpn-server:
+
+
+  vpn-client:
+
+  
+  network:
+    vpn-net:
+      driver: bridge
+  volumes:
+    vpn-data:
+      driver: local
