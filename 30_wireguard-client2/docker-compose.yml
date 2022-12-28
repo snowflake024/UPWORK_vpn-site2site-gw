@@ -12,7 +12,7 @@ services:
       - TZ=Africa/Nairobi #set correct timezone
       - SERVERURL=auto #Wireguard VPN server address      
     volumes:
-      - ./vpn-client/config:/config
+      - ./vpn-client2-conf:/config
       - /usr/src:/usr/src # location of kernel headers
       - /lib/modules:/lib/modules
 #    ports:
@@ -20,11 +20,11 @@ services:
 #    network_mode: "host"  
     networks:
       default:
-        ipv4_address: 172.20.0.50
+        ipv4_address: 172.21.0.60
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
     restart: unless-stopped
 networks:
   default:
-    name: wgnet
+    name: wgnet2
     external: true

@@ -18,7 +18,7 @@ services:
       - SERVERURL=93.123.16.201 #Wireguard VPN server address      
 #      - LOG_CONFS=true
     volumes:
-      - ./vpn-server/config:/config
+      - ./vpn-server-conf:/config
       - /usr/src:/usr/src # location of kernel headers
       - /lib/modules:/lib/modules
     ports:
