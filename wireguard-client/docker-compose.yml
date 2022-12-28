@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  vpn-server:
+  vpn-client:
     image: lscr.io/linuxserver/wireguard:latest
     container_name: wireguard-client
     cap_add:
@@ -12,7 +12,7 @@ services:
       - TZ=Africa/Nairobi #set correct timezone
       - SERVERURL=auto #Wireguard VPN server address      
     volumes:
-      - ./client/config:/config
+      - ./vpn-client/config:/config
       - /usr/src:/usr/src # location of kernel headers
       - /lib/modules:/lib/modules
 #    ports:
