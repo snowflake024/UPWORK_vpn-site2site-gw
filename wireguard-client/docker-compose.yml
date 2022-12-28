@@ -21,8 +21,9 @@ services:
       - ./wireguard-server/config:/config
       - /usr/src:/usr/src # location of kernel headers
       - /lib/modules:/lib/modules
-    ports:
-      - 51820:51820/udp
+#    ports:
+#      - 51820:51820/udp
+    network_mode: "host"  
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
     restart: unless-stopped
