@@ -14,7 +14,16 @@ We'll create a site-to-site connection with **WireGuard** allowing us to access 
 
 ## Working Example
 
-First let's define our three hosts.  They all have **WireGuard** docker containers installed.
+Before we start, you should know how wireguard is used in docker, for that I recommend reading the provided information on the official repository README. The URL can be found above.
+
+*1. NOTE THAT THE REPOSITORY CONTAINS CONFIGURATION FILES THAT ARE ALREADY IN USE, YOU SHOULD START ON A CLEANSLATE BY BRINGING UP THE CONTAINERS AND THEN REPLACING THE NEEDED LINES IN THE wg0.conf FILES*
+
+*2. Also note that, there are some further implementations done to better fit the initial goal of this project, consisting of grabbing Host's A LAN network address and inserting it in the container for automatic routing. This can be avoided by not using the script to start the container found in the respective directory of 30_wireguard-router.*
+
+*3. Also note^2 that initial configuration files for the peers are created in vpn-site2site-gw/10_wireguard-server/vpn-server-conf/ under the names of peer1, peer2, peern.. It is recommended to get those configuration files and place them under the vpn-router-conf/ and vpn-client-conf/ with the name of wg0.conf. After that the configuration files need to be modified according to the bellow article.*
+
+
+Now that we have cleared some future misunderstandings let's define our three hosts.  They all have **WireGuard** docker containers installed.
 
 ```A```  the Linux machine on the *local subnet*, **behind the NAT/firewall**, that also has a wireguard docker container in client mode running that is going to be used as a router between the docker bridge and the docker host's LAN. 
 
@@ -97,4 +106,4 @@ AllowedIPs = 0.0.0.0/0
 **You're finished.**  
 Make sure the **WireGuard** container is running on both HOSTS A and B, and then on the  HOST C, after connecting to HOST B with **WireGuard** you should be able to access the LAN/subnet of host A.
 
-*PLEASE NOTE THAT THE REPOSITORY CONTAINS CONFIGURATION FILES THAT ARE ALREADY IN USE, YOU SHOULD START ON A CLEANSLATE BY BRINGING UP THE CONTAINERS AND THEN REPLACING THE NEEDED LINES IN THE wg0.conf FILES*
+
