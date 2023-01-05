@@ -14,14 +14,14 @@ We'll create a site-to-site connection with **WireGuard** allowing us to access 
 
 ## Working Example
 
-Before we start, you should know how wireguard is used in docker, for that I recommend reading the provided information on the official repository README. The URL can be found above.
-
+Before we start, you should know how wireguard is used in docker, for that I recommend reading the provided information on the official repository README. The URL can be found above.  
+***
 *Note 1. THE REPOSITORY CONTAINS CONFIGURATION FILES THAT ARE ALREADY IN USE, YOU SHOULD START ON A CLEAN SLATE BY BRINGING UP THE CONTAINERS AND THEN REPLACING THE NEEDED LINES IN THE wg0.conf FILES*
 
 *Note 2. There are some further implementations done to better fit the initial goal of this project, consisting of grabbing Host's A LAN network address and inserting it in the container for automatic routing. This can be avoided by not using the script to start the container found in the respective directory of 30_wireguard-router.*
 
 *Note 3. The initial configuration files for the peers are created in vpn-site2site-gw/10_wireguard-server/vpn-server-conf/ under the names of peer1, peer2, peern.. It is recommended to get those configuration files and place them under the vpn-router-conf/ and vpn-client-conf/ with the name of wg0.conf. After that the configuration files need to be modified according to the bellow article.*
-
+***
 
 Now that we have cleared some future misunderstandings let's define our three hosts.  They all have **WireGuard** docker containers installed.
 
@@ -30,6 +30,7 @@ Now that we have cleared some future misunderstandings let's define our three ho
 ```B```  the Linux cloud server (*VPS, like an Amazon EC2 instance*), that is going to serve as the VPN Server that we connect to with other clients, who might want to have access to the LAN of host A.
 
 ```C```  a third **WireGuard** client; test client to check if connection is working
+***
 
 #### Host 'A' (ROUTER)
 
