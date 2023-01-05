@@ -97,3 +97,4 @@ AllowedIPs = 0.0.0.0/0
 **You're finished.**  
 Make sure the **WireGuard** container is running on both HOSTS A and B, and then on the  HOST C, after connecting to HOST B with **WireGuard** you should be able to access the LAN/subnet of host A.
 
+*PLEASE NOTE THAT THE REPOSITORY CONTAINS CONFIGURATION FILES THAT ARE ALREADY IN USE, YOU SHOULD START ON A CLEANSLATE BY BRINGING UP THE CONTAINERS AND THEN REPLACING THE NEEDED LINES IN THE wg0.conf FILES*
