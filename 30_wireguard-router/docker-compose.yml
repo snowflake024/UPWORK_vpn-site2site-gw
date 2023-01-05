@@ -2,7 +2,7 @@ version: '3.7'
 services:
   vpn-client:
     image: lscr.io/linuxserver/wireguard
-    container_name: wireguard-peer
+    container_name: wireguard-router-peer
     privileged: true
     cap_add:
       - NET_ADMIN
