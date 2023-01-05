@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   vpn-client:
-    image: lscr.io/linuxserver/wireguard
+    image: lscr.io/linuxserver/wireguard:alpine
     container_name: wireguard-peer
     privileged: true
     cap_add:
